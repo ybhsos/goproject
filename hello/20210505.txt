@@ -1,0 +1,61 @@
+5장 
+
+소스 설명
+package main
+import "fmt"
+func main(){
+ fmt.Print(....출력물)
+}
+지수표현, 실수 표현 , \n(개행문자)
+
+출력서식
+서식문자에 대한 이해 
+%v : 데이터 타입에 맞춰서 기본 형태로 출력
+%T : 데이터 타입 출력
+%d : 10진수 정숫값으로 출력
+%b : 2진수로 출력
+%c : 유니코드 문자 출력 
+%o : 8진수로 출력
+%s : 문자열 출력
+%f : 소수점 6자리까지 표현
+%g : 길이에 따라서 지수표현 또는 실수 표현으로 출력
+\n : 줄바꿈
+\t : 탭을 삽입
+\\ : \자체를 출력
+\* : *를 출력
+
+표준입력
+Scan()
+Scanf()
+Scanln()
+
+입력버퍼
+Ex 5.8
+package main
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
+func main(){
+    stdin := bufio.NewReader(os.Stdin)
+
+    var a int
+    var b int
+
+    n, err := fmt.Scanln(&a, &b)
+    if err != nil{
+        fmt.Println(err)
+        stdin.ReadString('\n')
+    } else{
+        fmt.Println(a,b)
+    }
+
+    n, err = fmt.Scanln(&a, &b)
+    if err != nil{
+        fmt.Println(err)
+        stdin.ReadString('\n')
+    } else{
+        fmt.Println(a,b)
+    }
+}
